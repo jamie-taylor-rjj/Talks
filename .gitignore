@@ -1,0 +1,7 @@
+# I use VS Code to build slides
+.vscode/
+
+# I sometimes use MacOS, too
+.DS_Store
+.AppleDouble
+.LSOverride
