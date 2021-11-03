@@ -8,7 +8,27 @@ This talk uses the [Takahasi method](https://en.wikipedia.org/wiki/Takahashi_met
 
 To build this talk... well, it's a single HTML file. And is already build.
 
-To run this talk, open the [slide.html](./slide.html) file in a browser or [view it online](http://htmlpreview.github.io/?https://github.com/jamie-taylor-rjj/Talks/blob/main/advice/slide.html)
+To run this talk, open the [slide.html](./slide.html) file in a browser or [view it online](http://htmlpreview.github.io/?https://github.com/jamie-taylor-rjj/Talks/blob/main/advice/slide.html).
+
+Or you could use [VS Code](https://code.visualstudio.com/) and the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension.
+
+### VS Code & Live Server
+
+In preparing this slide deck, I used VS Code and an extension called [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer). There are no build requirements for this slide deck.
+
+Open the root of the repository with a live server and head to the url exposed by the server:
+
+- Open the repository with VS Code
+- Open the [command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette)
+- Type `> Live Server: Open with Server`
+- A browser window should open with the slide deck running
+
+Don't forget to stop the Live Server when you are done:
+
+- Open the [command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette)
+- Type `> Live Server: Stop Live Server`
+
+Not stopping the live server could lead to memory leaks. Not to mention an exposed port on your computer.
 
 ## Licence
 
