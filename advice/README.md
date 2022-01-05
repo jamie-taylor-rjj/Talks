@@ -6,7 +6,7 @@ This talk uses the [Takahasi method](https://en.wikipedia.org/wiki/Takahashi_met
 
 ## Building and Running
 
-To build this talk... well, it's a single HTML file. And is already build.
+To build this talk... well, it's a single HTML file. And is already built.
 
 To run this talk, open the [slide.html](./slide.html) file in a browser or [view it online](http://htmlpreview.github.io/?https://github.com/jamie-taylor-rjj/Talks/blob/main/advice/slide.html).
 
