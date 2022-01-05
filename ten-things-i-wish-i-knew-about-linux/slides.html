@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>10 Things I Wish I Knew Before Writing .NET On Linux</title>
+    <style>*{margin:0;padding:0;box-sizing:border-box}#slide{display:none}.slide{white-space:nowrap}.slide-content{align-self:center}@media screen{body{position:absolute;top:50%;left:50%}.slide-4x3{width:1024px;height:768px;margin:-384px 0 0 -512px}.slide-16x9{width:1024px;height:576px;margin:-288px 0 0 -512px}.slide-16x10{width:1024px;height:640px;margin:-320px 0 0 -512px}.slide{position:absolute;width:100%;height:100%;display:flex;justify-content:center;overflow:hidden}}@media print{body{transform:none!important}h1{font-size:1.8rem;line-height:1.5;letter-spacing:-.05rem;font-weight:300}.slide-root{width:100%;display:flex;flex-wrap:wrap;align-items:stretch}.slide-content{transform:none!important}.slide{display:flex;justify-content:center;flex:1;padding:.5rem;margin:.5rem .5rem 4rem .5rem;border:1px solid rgba(0,0,0,0.2);visibility:visible!important}}</style>
+    <script>function trimIndent(e){var t=(e.match(INDENT_RE)||[""])[0].length;if(t>0){var n=e.substring(0,t);return e.replace(new RegExp(n,"g"),"")}}function renderSlide(e,t,n){var i=t.split("\n"),r=-1,o=document.createElement("div"),d=document.createElement("div"),s="";o.className="slide slide-"+n,d.className="slide-content";for(var l=0;l<i.length;l++){var a=i[l];if(a.startsWith("#"))s=s+"<h1>"+a.substring(1)+"</h1>";else if(a.startsWith("  ")||a.startsWith("	"))s=s+"<pre>"+a.replace(/^(  )|\t/,"")+"</pre>";else{a.startsWith(".")&&(a=a.substring(1));for(var c=0;c<a.length;c++){var h=a.charAt(c);"*"==h?-1==r?(s+="<strong>",r=s.length):(r!=s.length?s+="</strong>":s=s.substring(0,s.length-8)+"*",r=-1):s+=h}s+="<br/>"}}d.innerHTML=s,o.appendChild(d),e.appendChild(o),o.style.visibility="hidden"}function render(e){var t=document.createElement("div");t.className="slide-root",document.body.appendChild(t),e=trimIndent(e);for(var n=e.split(/[\s+]\n/gm),i=0;i<n.length;i++){var r=n[i].trim();renderSlide(t,r,i)}return t}function resize(){var e=window.innerWidth,t=window.innerHeight,n=document.body.offsetWidth,i=document.body.offsetHeight,r=n/i>e/t?e/n:t/i;document.body.style.transform="scale("+r+")"}function goTo(e){currentSlide=e,window.location.hash=e;for(var t=document.querySelectorAll(".slide"),n=0;n<t.length;n++){var i=t[n],r=i.children[0],o=.8*i.offsetWidth/r.offsetWidth,d=.8*i.offsetHeight/r.offsetHeight;r.style.transform="scale("+Math.min(o,d)+")",n==currentSlide?i.style.visibility="":i.style.visibility="hidden"}}function next(){goTo(Math.min(currentSlide+1,document.querySelectorAll(".slide").length-1))}function prev(){goTo(Math.max(currentSlide-1,0))}var INDENT_RE=/^(?:( )+|\t+)/,currentSlide=-1;window.onload=function(){resize(),render(document.getElementById("slide").innerHTML),goTo(window.location.hash.substring(1)||0),window.onclick=next,window.onresize=resize,window.onkeydown=function(e){39==e.keyCode?next():37==e.keyCode&&prev()}};</script>
+    <style media="screen">
+      @import url(https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext);
+      @import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+      @import url(https://fonts.googleapis.com/css?family=Inconsolata);
+      /* Customize theme: change body, h1, strong, pre or .slide class */
+      body {
+        font-family: 'Lato', sans-serif;
+        background-color: #353b43;/*#edd400;*/
+        color: #fff;/*#453029;*/
+        line-height: 1.54;
+      }
+      .slide h1 {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 400;
+        font-size: 2.6rem;
+      }
+      .slide pre {
+        font-family: 'Inconsolata';
+        font-size: 1.6rem;
+        line-height: 1.1;
+      }
+      .slide-10 h1 { color: #fff; text-shadow: 1px 1px 3px #453029; }
+    </style>
+  </head>
+  <body class="slide-16x9">
+    <pre id="slide">
+      # 10 Things I Wish I Knew
+      # Before Writing .NET On Linux
+      <!-- Before we start, I've been using Linux-based OSs
+           as my daily drivers for around 10 years, and I'm
+           still learning.
+           This is talk isn't going to answer every question
+           that you have. However, I want to give you enough
+           information that you can at least google things -->
+      - Jamie Taylor
+
+      # Do I NEED To Know Linux?
+      Not at all
+      Might be useful to know
+      Might command a higher salary (YMMV)
+
+      # First, Some Ancient Wisdom
+      <!-- Do not think that
+           This is all there is.
+           More and more
+           Wonderful teachings exist -
+           The sword is unfathomable -->
+        Wonderful teachings exist -
+        The sword is unfathomable
+      - Yamaoka Tesshu
+
+      # What is Linux?
+      <!-- 1) The point with this slide is to try and
+           impress on the audience that Linux is
+           everywhere ("it's the force that binds us"?)
+           It's all of these things and none of them
+           as Linux (or more correctly GNU Linux)
+           is an OS kernel - like the NT kernel on Windows
+           or XNU kernel on MacOS -->
+      (Baby Don't Hurt Me, No More)
+      That penguin thing
+      Android
+      All the IoT
+
+      # So How Do I Get a Linux?
+      <!-- 2) Here we're telling the audience that there
+           are quite a few different "Linuxes" or distros.
+           Each one has it's own lineage, and it might be
+           an idea to have the Wiki page for the List of
+           Linux Distros loaded in order to show this. -->
+      ("one Linux, please")
+      There are hundreds
+      Most "famous" are Fedora, OpenSuse, REHL, Debian and Ubunutu
+      Distros (short for distributions)
+
+      # How Are They All Different?
+      <!-- 3) There are a lot of differences in the many Linux
+           distributions. Some differences are cosmetic, some
+           are based on their package manager, and some are
+           due to licensing.
+           From an end-user's perspective, they look different
+           but all act similarly.
+           Some folks swear by rpm over apt, others thing that
+           flatpack is the best.
+           Each distro has it's own set of packages, positives
+           and negatives.
+           Some distros are not supported by .NET (CentOs 8,
+           Debian 8, some versions of Ubuntu, etc.), and new
+           versions of distros take time to get support, for
+           example Fedora.
+           See https://docs.microsoft.com/en-gb/dotnet/core/install/linux
+           for the latest on .NET on Linux -->
+      (how to sit on the fence)
+      Tricky question
+      They are all different, but mostly the same
+
+      # It's Just Like Windows, Right?
+      <!-- 4) Windows and Linux distros differ a lot, both in the
+           look and feel (although Windows 11 looks a LOT like
+           XFCE;, and Linux Mint looks a lot like Win 98; let's
+           not mention ReactOS for now).
+           From things as low level as line endings up to the
+           security model, and through to how applications are
+           installed, everything is different.
+           The filesystem in Linux (and Unix) all lives under "/"
+           and there are different places under than for different
+           things. Some examples are:
+           "/home" is your home directory (similar to your use area
+           in Windows)
+           "/bin" is where binaries go (like Program Files)
+           "/dev" is where devices live, but they are accessed via
+           either "/mnt" or "/media" for instance.
+           wine is a backronym and means "Wine Is Not An Emulator",
+           and is a compatibility layer which aims to run Windows
+           apps on Linux distros. Have you heard of Proton or the
+           Steam Deck? Proton uses Wine, and Steam Deak uses Proton. -->
+      (visually, yes)
+      No drive letters
+      Different security model
+      wine exists
+
+      # apt, rpm, yum, flatpack, appimage, snap?
+      <!-- 5) There are tonnes of different ways to package up and
+           install applications on a Linux distro.
+           Do we need to worry about this? As out .NET apps are
+           all web, right? -->
+      (and the beat goes on)
+      No drive letters
+      Different security model
+
+      # docker Is Linux, Right?
+      <!-- 6) Yup, and the wizardry that went on behind the scenes
+           to get docker working on Windows is quite amazing.
+           Essentially docker images are the steps required to install
+           and run an app on a completely stripped down Linux install.
+           Whilst docker isn't hard to get to grips with (per se),
+           having background knowledge in Linux can help with the edge
+           cases -->
+      Absolutely
+      Except for Windows containers
+      But we don't talk about those
+
+      # Do I Need To Know The CLI?
+      <!-- 7) The majority of what you'll need to learn is who to use
+           the package manager (maybe), the .NET SDK, and maybe a little
+           docker (if you end up using it).
+           But you can remove this dependency by using VS Code (free) or
+           Rider (paid). Both are great, even though VS Code needs a bit
+           of setup to get it working nicely. -->
+      As a .NET dev? Yes
+      But not a huge amount
+          dotnet --help
+      VS Code and Rider are your friends
+
+      # .NET Specific Advice?
+      <!-- 8) Not everything in .NET works outside of Windows, but the
+           amount of things which don't work is very small. Native GUIs
+           (at the moment), Registry (there isn't one), and Windows auth
+           are the only ones that I can think of.
+           Native GUIs are coming in .NET Maui, but Linux WON'T be supported
+           in the v1 time frame. (check episode 91 of the pod for a reason)
+           tl;dr -> Android .NET Maui apps will be bootable on Linux, but
+           Linux will not be a supported target platform.
+           Paths in Linux (and Unix) use the forward slash separator (like
+           the web), but paths on Windows use the backslash separator - best
+           to just use Path.Join and .NET will figure it out.-->
+      Not everything works
+      But a *huge* amount does
+      Watch you paths
+
+      # Support?
+      <!-- 9) Not all Linuxes are free. Enterprises can look to REHL and similar
+           for "enterprise level Linux" distributions. Some of these use the
+           latest and greatest packages, whereas some use battle tested ones.
+           Some enterprise Linuxes support things like hot-patching the kernel
+           whilst in use (imagine not having to reboot to install updates).
+           Most of the bigger names have _LOADS_ of support via documentation;
+           as long as you're not doing something too off piste, someone will have
+           already done it, and there will be documentation on it.
+           I would recommend the Ubuntu tutorials, the Digital Ocean docs, and the
+           Arch wiki as places to go first.-->
+      Some distros are "enterprisey" and have paid support
+      Most have free support via documentation and forums
+      Ubuntu (and derivatives) are my favourite *because* of the support
+
+      # How Do I Pick One?
+      <!-- 10) Picking a distro is about as personal as picking a car or the clothes
+           you wear. Each distro has it's benefits and drawbacks, too.
+           Personally, I would start with something from the Debian family. Ubuntu
+           is a very user friendly starter distro. Pop OS is great, if you like gaming.
+           There's nothing stopping you from diving into Arch or Kali Linux, but be
+           aware that these are Linux in hard mode.
+           The main difference between server and desktop distros is that desktop ones
+           have a preconfigured GUI and are aimed at GUI users. Server distros tend to
+           favour TUI (or terminal based) users.-->
+      Long-lived ones are better
+      Avoid Kali (unless you know what you're doing)
+
+      # Who I Am
+      A Dad, mentor, teacher, business owner, podcaster, and developer
+      Microsoft MVP since December 2021
+      The .NET Core Podcast, Waffling Taylors, and Tabs and Spaces
+
+      # Links
+      https://github.com/jamie-taylor-rjj/Talks/tree/main/ten-things-i-wish-i-knew-about-linux
+      http://htmlpreview.github.io/?https://github.com/jamie-taylor-rjj/Talks/blob/main/ten-things-i-wish-i-knew-about-linux/slide.html
+      https://distrowatch.com/
+      https://www.reddit.com/r/linux4noobs
+      https://twitter.com/podcasterjay
+      http://rjj-software.co.uk
+    </pre>
+  </body>
+</html>
