@@ -8,7 +8,7 @@ This talk uses the [Takahasi method](https://en.wikipedia.org/wiki/Takahashi_met
 
 To build this talk... well, it's a single HTML file. And is already built.
 
-To run this talk, open the [slide.html](./slide.html) file in a browser or [view it online](http://htmlpreview.github.io/?https://github.com/jamie-taylor-rjj/Talks/blob/main/ten-things-i-wish-i-knew-about-linux/slide.html).
+To run this talk, open the [slide.html](./slide.html) file in a browser or [view it online](https://htmlpreview.github.io/?https://github.com/jamie-taylor-rjj/Talks/blob/main/ten-things-i-wish-i-knew-about-linux/slides.html).
 
 Or you could use [VS Code](https://code.visualstudio.com/) and the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension.
 
