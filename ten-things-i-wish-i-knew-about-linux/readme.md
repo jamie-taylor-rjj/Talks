@@ -16,6 +16,34 @@ Or you could use [VS Code](https://code.visualstudio.com/) and the [Live Server]
 
 You will find my original slide notes embedded into the markup of the [slide.html](./slide.html) file, as HTML comments. These should be helpful to expand on the points that I was hoping to make.
 
+## Links Used In Discussion
+
+- [Installing WSL](https://docs.microsoft.com/en-us/windows/wsl/install)
+- [List of Linux Distros](https://en.wikipedia.org/wiki/List_of_Linux_distributions)
+- [Run Linux in your browser](https://copy.sh/v86/)
+- [Download Ubuntu Desktop](https://ubuntu.com/download/desktop)
+- [Ventoy - run many different Linuxes on your USB memory stick](https://www.ventoy.net/en/index.html)
+- [Install .NET on Linux](https://docs.microsoft.com/en-gb/dotnet/core/install/linux)
+- [EndeavourOS - similar in style to MacOS](https://endeavouros.com/)
+- [Linux Mint - similar in style to Windows 98 through XP](https://linuxmint.com/)
+- [WINE - for running Windows applications on Linux](https://www.winehq.org/)
+- Debugging & Tracing
+  - [SOS](https://github.com/dotnet/diagnostics/blob/main/documentation/sos.md)
+  - [dotnet-dump](https://github.com/dotnet/diagnostics/blob/main/documentation/dotnet-dump-instructions.md)
+  - [dotnet-gcdump](https://github.com/dotnet/diagnostics/blob/main/documentation/dotnet-gcdump-instructions.md)
+  - [dotnet-trace](https://github.com/dotnet/diagnostics/blob/main/documentation/dotnet-trace-instructions.md)
+- Support
+  - [Digital Ocean Tutorials](https://www.digitalocean.com/community/tutorials)
+  - [Arch Linux Wiki](https://wiki.archlinux.org/)
+  - [Linux4Noobs subreddit](https://www.reddit.com/r/linux4noobs)
+- Extra Information
+- [DistroWatch](https://distrowatch.com)
+- [Linux Unplugged](https://linuxunplugged.com/)
+- Jamie's Podcasts
+  - [The .NET Core Podcast](https://dotnetcore.show)
+  - [The Waffling Taylors](https://wafflingtaylors.rocks)
+  - [Tabs & Spaces](https://tabsandspaces.io/)
+
 ### VS Code & Live Server
 
 In preparing this slide deck, I used VS Code and an extension called [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer). There are no build requirements for this slide deck.
