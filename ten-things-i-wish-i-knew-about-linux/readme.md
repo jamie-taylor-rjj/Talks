@@ -37,8 +37,8 @@ You will find my original slide notes embedded into the markup of the [slide.htm
   - [Arch Linux Wiki](https://wiki.archlinux.org/)
   - [Linux4Noobs subreddit](https://www.reddit.com/r/linux4noobs)
 - Extra Information
-- [DistroWatch](https://distrowatch.com)
-- [Linux Unplugged](https://linuxunplugged.com/)
+  - [DistroWatch](https://distrowatch.com)
+  - [Linux Unplugged](https://linuxunplugged.com/)
 - Jamie's Podcasts
   - [The .NET Core Podcast](https://dotnetcore.show)
   - [The Waffling Taylors](https://wafflingtaylors.rocks)
