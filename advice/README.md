@@ -38,7 +38,7 @@ This talk uses the same license as the outer repo: [![License: CC BY-SA 4.0](htt
 
 WAT! It's a slide deck. Relax.
 
-Ok, so since this is meant to be a single HTML file for giving talks there's almost no thought gone into the security of the HTML file. But since the HTML slide deck only makes calls out to Google for fonts, I can't see how it could be seen as a _huge_ security issue. There are some inline styles (which can cause issues with [CSP]()), but that shouldn't be something to worry about for this... unless some malicious actor makes some changes to the file and adds some external JavaScript, or embeds it in a frame.
+Ok, so since this is meant to be a single HTML file for giving talks there's almost no thought gone into the security of the HTML file. But since the HTML slide deck only makes calls out to Google for fonts, I can't see how it could be seen as a _huge_ security issue. There are some inline styles (which can cause issues with [CSP](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)), but that shouldn't be something to worry about for this... unless some malicious actor makes some changes to the file and adds some external JavaScript, or embeds it in a frame.
 
 But if someone does that, then you'll have slightly bigger problems.
 
