@@ -1,6 +1,6 @@
 # Empathy, Sympathy & Compassion
 
-A lightning talk originally given at .NET Oxford on July 12th, 2022.
+A talk on Empathy, Sympathy, and Compassion; originally given at [DDD North](https://www.dddnorth.co.uk/) - which took place at The University of Hull on December 3rd.
 
 This talk uses the [Takahasi method](https://en.wikipedia.org/wiki/Takahashi_method), and is based on [Trikita's Slide](https://github.com/trikita/slide-html) repo.
 
