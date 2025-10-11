@@ -1,6 +1,9 @@
 # Empathy, Sympathy & Compassion
 
-A talk on Empathy, Sympathy, and Compassion; originally given at [Umbtraco In The City 2025]() - which took place online in Manchester (UK), on November 7th, 2025.
+A talk on Empathy, Sympathy, and Compassion; originally given at [Umbtraco In The City 2025](https://www.umbracointhe.city/) - which took place online in Manchester (UK), on November 7th, 2025. The schedule is available [here](https://www.umbracointhe.city/schedule).
+
+> [!NOTE]
+> The schedule may disappear or be edited after November 7th, 2025.
 
 This talk originally used the [Takahasi method](https://en.wikipedia.org/wiki/Takahashi_method). However, each slide quickly became bigger and bigger. The dream is to include 1-4 words per slide and refer to the notes (provided as HTML comments) within each slide. But I'm not that good at presenting 😕
 
@@ -20,6 +23,7 @@ The main sources & inspirations for this talk are:
 - Several conversations I had for The Modern .NET Show:
   - [with Dylan Beattie](https://dotnetcore.show/episode-48-rockstar-with-dylan-beatie/)
   - [with Safia Abdalla](https://dotnetcore.show/season-8/compassionate-coding-safia-abdallas-insights-on-empathy-in-open-source-development/)
+  - [a short version of a previous of this talk](https://dotnetcore.show/episode-118-empathy-sympathy-and-compassion-for-our-users/)
 - A [blog post that I wrote on the subject](https://rjj-software.co.uk/blog/important-skills-for-developers-empathy/) (can I be my own source?)
 - [Episode 208](https://open.spotify.com/episode/25ifQbR73ybIZKW7AiU7yd) of Tabs & Spaces
 - Several videos on the subject:
@@ -60,6 +64,10 @@ The following are TODO items:
 
 - Read through talk and update with new ideas and points
 - Update links on second slide (short links to repo and viewing the slides in browser)
+
+## Who is this Jamie chap?
+
+Jamie is the host of [The Modern .NET Show](https://dotnetcore.show/), main developer/contributor on [OwaspHeaders.Core](https://gaprogman.github.io/OwaspHeaders.Core/), [Microsoft MVP](https://mvp.microsoft.com/en-US/mvp/profile/0ff8fe6a-4b4c-ec11-8f8e-00224827f7fc), and Strategic Technology Consultant at [RJJ Software](https://rjj-software.co.uk/).
 
 ## Licence
 
