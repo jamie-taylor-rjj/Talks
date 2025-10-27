@@ -35,7 +35,7 @@ The main sources & inspirations for this talk are:
 
 To build this talk... well, it's a single HTML file (with separate CSS and JS files). And is already built.
 
-To run this talk, open the [slide.html](./slide.html) file in a browser or [view it online](http://htmlpreview.github.io/?https://github.com/jamie-taylor-rjj/Talks/blob/main/uitc-empathy-sympathy-compassion/slide.html).
+To run this talk, open the [slide.html](./slide.html) file in a browser or [view it online](https://htmlpreview.github.io/?https://github.com/jamie-taylor-rjj/Talks/blob/main/uitc-empathy-sympathy-compassion/slide.html#0).
 
 Or you could use [VS Code](https://code.visualstudio.com/) and the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension.
 
