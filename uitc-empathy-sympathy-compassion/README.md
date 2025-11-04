@@ -58,12 +58,18 @@ Don't forget to stop the Live Server when you are done:
 > [!WARNING]
 > Not stopping the live server could lead to memory leaks. Not to mention an exposed port on your computer.
 
-## TODO
+## Links
 
-The following are TODO items:
+The following links were originally in the talk, but I've taken them out. I'll leave them here for those who want ot learn more about the subject.
 
-- Read through talk and update with new ideas and points
-- Update links on second slide (short links to repo and viewing the slides in browser)
+- https://www.youtube.com/watch?v=35Wt8LhoVHA - Brené Brown on Empathy
+- https://www.youtube.com/watch?v=1Evwgu369Jw - Pych2Go on Empathy vs Sympathy
+- https://www.youtube.com/watch?v=pi86Nr9Mdms - Simon Sinek on Understanding Sympathy
+- https://dotnetcore.show/episode-48-rockstar-with-dylan-beatie/
+- https://dotnetcore.show/season-8/compassionate-coding-safia-abdallas-insights-on-empathy-in-open-source-development/
+- https://open.spotify.com/episode/25ifQbR73ybIZKW7AiU7yd (Tabs and Spaces 208)
+- https://rjj-software.co.uk/blog/important-skills-for-developers-empathy/
+- https://rjj-software.co.uk/client-code-of-conduct/
 
 ## Who is this Jamie chap?
 
