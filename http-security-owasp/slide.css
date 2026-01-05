@@ -1,0 +1,134 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#slide {
+	display: none;
+}
+
+.slide {
+	white-space: nowrap;
+}
+
+.slide-content {
+	align-self: center;
+}
+
+@media screen {
+	/* Customize theme: change body, h1, strong, pre or .slide class */
+	body {
+		font-family: 'Lato', sans-serif;
+        background-color: #353b43;
+        /*#edd400;*/
+        color: #fff;
+        /*#453029;*/
+		line-height: 1.54;
+	}
+
+	.slide h1 {
+		font-family: 'Oswald', sans-serif;
+		font-weight: 400;
+		font-size: 2.6rem;
+	}
+
+	.slide pre {
+		font-family: 'Inconsolata';
+		font-size: 0.6rem;
+		line-height: 1.1;
+	}
+
+	.slide-10 h1 {
+		color: #fff;
+		text-shadow: 1px 1px 3px #453029;
+	}
+
+	.slide-11 {
+		background: url("http://trikita.co/slide/icon.png"), url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/asanoha-400px.png");
+		background-repeat: no-repeat, repeat;
+		background-size: 35%, auto;
+		background-position: bottom right;
+	}
+
+	.slide-13 .slide-content {
+		background-image: url("http://trikita.co/slide/write_framed.png"),
+			url("http://trikita.co/slide/styles.gif"),
+			url("http://trikita.co/slide/illustrate_framed.png");
+		background-repeat: no-repeat;
+		background-size: 40%, 40%, 40%;
+		background-position: bottom left, bottom center, bottom right;
+	}
+
+	/* Aspect ratio classes for the body tag */
+	body {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+	}
+
+	.slide-4x3 {
+		width: 1024px;
+		height: 768px;
+		margin: -384px 0 0 -512px;
+	}
+
+	.slide-16x9 {
+		width: 1024px;
+		height: 576px;
+		margin: -288px 0 0 -512px;
+	}
+
+	.slide-16x10 {
+		width: 1024px;
+		height: 640px;
+		margin: -320px 0 0 -512px;
+	}
+
+	.slide {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		overflow: hidden;
+	}
+}
+
+@media print {
+	body {
+		transform: none !important;
+	}
+
+	h1 {
+		font-size: 1.8rem;
+		line-height: 1.5;
+		letter-spacing: -.05rem;
+		font-weight: 300;
+	}
+
+	.slide-root {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: stretch;
+	}
+
+	.slide-content {
+		transform: none !important;
+	}
+
+	.slide {
+		display: flex;
+		justify-content: center;
+		flex: 1;
+		padding: 0.5rem;
+		margin: 0.5rem 0.5rem 4rem 0.5rem;
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		visibility: visible !important;
+	}
+}
