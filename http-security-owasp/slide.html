@@ -15,7 +15,6 @@
 
       # Before We Start
       - Let's thank the organisers
-      - The sponsors
       - And you all
 
       # Emoji Use
@@ -115,24 +114,12 @@
       Dedicated to software security
       Since 2001
 
-      # 💬 OWASP Mission
-      "To be the global open community that powers
-      secure software through education, tools,
-      and collaboration"
-      .
-      &mdash; OWASP Foundation
-
       # 💡 OWASP Community
       250+ local chapters worldwide
       Tens of thousands of members
       .
       *Free, vendor-neutral resources*
       Open-source and Creative Commons licensing
-
-      # 💬 The Goal
-      "No more insecure software"
-      .
-      &mdash; OWASP Vision
 
       # 💡 OWASP Secure Headers Project
       Community-led initiative
@@ -167,12 +154,10 @@
       *One year of HTTPS-only connections*
       <!-- Also known as HSTS (HTTP Strict Transport Security)
            OWASP ref: https://owasp.org/www-project-secure-headers/#strict-transport-security
-
            Metaphor: Think of this like a bouncer at a club who refuses to let anyone
            in through the sketchy back door (HTTP) and forces everyone to use the
            secure main entrance (HTTPS). Once a browser sees this header, it won't
            even ATTEMPT an HTTP connection for the specified time period (max-age).
-
            The includeSubDomains directive means this applies to all subdomains too,
            like www.example.com, api.example.com, etc. -->
 
@@ -190,11 +175,9 @@
         X-Frame-Options: DENY
         X-Frame-Options: SAMEORIGIN
       <!-- OWASP ref: https://owasp.org/www-project-secure-headers/#x-frame-options
-
            Metaphor: This is like saying "my art can't be displayed inside
            someone else's picture frame." DENY means no one can frame your page,
            SAMEORIGIN means only your own site can frame it.
-
            Note: This is being superseded by Content-Security-Policy's frame-ancestors
            directive, but it's still widely supported and worth including for older
            browsers. -->
@@ -221,11 +204,9 @@
       .
       *Browsers must respect declared Content-Type*
       <!-- OWASP ref: https://owasp.org/www-project-secure-headers/#x-content-type-options
-
            Metaphor: Think of this as enforcing truth in labeling. Without this,
            a browser might say "this file says it's text/plain, but it LOOKS like
            JavaScript to me, so I'll execute it as JavaScript!" That's dangerous.
-
            With nosniff, the browser is forced to trust the label: if you say it's
            text/plain, it will be treated as text/plain, period. No guessing games. -->
 
@@ -248,22 +229,19 @@
       .
       *Most powerful security header*
       <!-- OWASP ref: https://owasp.org/www-project-secure-headers/#content-security-policy
-
-           Metaphor: CSP is like a security guard with a whitelist at an exclusive
+           Metaphor: CSP is like a security guard with a allowlist at an exclusive
            event. Every script, style, image, or other resource that wants to run
            on your page must be on the approved list. If it's not, it gets bounced.
-
            default-src 'self' means "only load resources from my own domain."
            You can get much more granular: script-src, style-src, img-src, etc.
-
            This is THE most powerful defence against XSS (Cross-Site Scripting). Even
            if an attacker manages to inject malicious JavaScript into your HTML, CSP
-           will prevent it from executing. -->
+           will prevent it from executing. It is powerful, but can easily break your website. -->
 
       # ⚠️ Mitigates XSS Attacks
       *Cross-Site Scripting (XSS)*: Injecting malicious scripts
       .
-      CSP whitelist blocks unauthorised scripts
+      CSP allowlist blocks unauthorised scripts
       Even if attacker injects code, browser won't run it
       .
       *Defence in depth*
@@ -280,12 +258,12 @@
            - Blocking your own inline scripts (use nonces or hashes)
            - Blocking CDN resources you actually need
            - Breaking third-party widgets (social media embeds, analytics, etc.)
-
            Start with Content-Security-Policy-Report-Only to test without breaking
            things. Monitor the violation reports, then switch to enforcement mode.
-
            Real talk: Getting CSP right can take weeks for a complex application.
-           Don't let perfect be the enemy of good - start strict and loosen as needed. -->
+           Don't let perfect be the enemy of good - start strict and loosen as needed.
+           It's like using a chainsaw to spread butter on toast: it's doable, but someone
+           is going to lose an arm. -->
 
       # 💡 Cross-Origin-Opener-Policy
       Isolates browsing contexts
@@ -294,13 +272,11 @@
       .
       Prevents cross-origin attacks on window references
       <!-- OWASP ref: https://owasp.org/www-project-secure-headers/#cross-origin-opener-policy
-
            Metaphor: Imagine you open a popup window to another site. Without COOP,
            that popup can reach back through window.opener and access your original
            page. COOP breaks that connection - it's like cutting the cord between
            two browser tabs so they can't talk to each other unless they're from
            the same origin.
-
            This works with COEP to enable "cross-origin isolation" which is required
            for some powerful browser features like SharedArrayBuffer (used for
            high-performance apps). -->
@@ -312,15 +288,12 @@
       .
       Works with COOP for process isolation
       <!-- OWASP ref: https://owasp.org/www-project-secure-headers/#cross-origin-embedder-policy
-
            COEP requires that all resources loaded by your page either come from
            your origin OR explicitly opt-in to being embedded via CORS headers
            (specifically Cross-Origin-Resource-Policy: cross-origin).
-
            Think of it as: "I only want resources that have given me explicit
            permission to use them." This prevents side-channel attacks like Spectre
            where attackers could potentially read cross-origin data.
-
            Warning: This can break third-party resources (images, scripts) that
            don't send proper CORS headers. Test thoroughly! -->
 
@@ -329,18 +302,14 @@
       .
         Referrer-Policy: strict-origin-when-cross-origin
       <!-- OWASP ref: https://owasp.org/www-project-secure-headers/#referrer-policy
-
            When you click a link from page A to page B, the browser sends a "Referer"
            header (yes, misspelled in the HTTP spec!) telling page B where you came from.
-
            Metaphor: It's like leaving a trail of breadcrumbs everywhere you go on the
            web. Referrer-Policy lets you control how detailed those breadcrumbs are.
-
            strict-origin-when-cross-origin (recommended) means:
            - Same-origin: Send the full URL
            - Cross-origin HTTPS→HTTPS: Send just the origin (https://example.com)
            - HTTPS→HTTP: Send nothing (downgrade, not secure)
-
            Other options: no-referrer (send nothing), same-origin (only within your site) -->
 
       # ⚠️ Privacy and Security
@@ -352,10 +321,8 @@
       *Referrer-Policy limits exposure*
       <!-- Real-world example: User visits:
            https://yoursite.com/reset-password?token=secret123
-
            They click a link to another site. Without Referrer-Policy, that other
            site receives the FULL URL including the password reset token!
-
            Another issue: Analytics companies can track users across sites by
            collecting referrer data. Limiting referrers helps user privacy. -->
 
@@ -364,17 +331,14 @@
       .
         Clear-Site-Data: "cache", "cookies", "storage"
       <!-- OWASP ref: https://owasp.org/www-project-secure-headers/#clear-site-data
-
            Metaphor: This is the "nuclear option" for cleaning up after yourself.
            When the user logs out, this header tells the browser "delete EVERYTHING
            related to this site."
-
            Types of data cleared:
            - "cache": HTTP cache, service worker caches
            - "cookies": All cookies for this origin
            - "storage": localStorage, sessionStorage, IndexedDB, etc.
            - "*": Everything (use with caution!)
-
            Typically sent on logout endpoints. -->
 
       # ⚠️ Secure Logout Flows
@@ -387,13 +351,11 @@
       <!-- Scenario: User logs into online banking on a library computer. They log
            out, but their data is still in localStorage, cookies are still set,
            cached pages might contain sensitive info.
-
            Next person uses the same browser. Uh oh.
-
            Clear-Site-Data on the logout endpoint prevents this. The browser wipes
            everything the moment logout completes. Essential for public/shared devices. -->
 
-      # ⚠️ Remove Information Disclosure Headers
+      # ⚠️ Remove Information Disclosure
         Server: Apache/2.4.41 (Ubuntu)
         X-Powered-By: PHP/7.4.3
       .
@@ -402,17 +364,15 @@
       Removal is as important as addition
       <!-- Security through obscurity isn't real security, BUT there's no reason to
            make an attacker's job easier.
-
            If I know you're running .NET Framework 3.5, I can look up CVEs (Common
            Vulnerabilities and Exposures) for that specific version. Same with .NET 5
            or anything else.
-
            Metaphor: It's like having your house locks visible from the street with
            the brand name and model number clearly displayed. A burglar can research
            exactly how to pick that specific lock.
-
-           Remove or obfuscate these headers. In ASP.NET, suppress the X-Powered-By
-           and Server headers. In Apache/nginx, configure them to not send version info. -->
+           Remove or obfuscate these headers. In ASP.NET and ASP.NET Core, suppress the
+           X-Powered-By and Server headers. In Apache/nginx, configure them to not send
+           version info. -->
 
       # 💭 How Do We Implement These?
       Eight security headers
@@ -441,7 +401,6 @@
            - Show how verbose it gets
            - Point out the string-based values (typo prone!)
            - Show in browser DevTools that headers are present
-
            The goal is to show the pain before showing the solution. -->
 
       # [LIVE DEMO]
@@ -451,15 +410,14 @@
         {
           context.Response.Headers.Add("X-Frame-Options", "DENY");
           context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
-          context.Response.Headers.Add("Strict-Transport-Security",
-            "max-age=31536000; includeSubDomains");
+          context.Response.Headers.Add("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
           // ... more headers
           await next();
         });
 
       # ⚠️ Pain Points Observed
-      - 3+ lines per header
-      - String values (typo risk)
+      - 2 hardcoded strings per header
+      - Typo risk
       - No validation or type safety
       - Easy to forget headers
       - Hard to update across projects
@@ -471,7 +429,6 @@
            - When OWASP updates recommendations, you need to manually update every project
            - No IntelliSense or compiler help
            - Copying and pasting between projects leads to drift
-
            This is the "pain" that motivates the solution you're about to show. -->
 
       # 💭 Imagine...
@@ -487,7 +444,6 @@
       *Secure by default*
       <!-- Full disclosure: This is my package! I created it because I was tired of
            manually configuring security headers across multiple projects.
-
            The package:
            - Implements all OWASP recommended headers
            - Uses sensible defaults based on OWASP guidance
@@ -495,7 +451,6 @@
            - Automatically removes information disclosure headers
            - Gets updated when OWASP recommendations change
            - Fully open source on GitHub
-
            NuGet: https://www.nuget.org/packages/OwaspHeaders.Core/
            GitHub: https://github.com/GaProgMan/OwaspHeaders.Core -->
 
@@ -527,7 +482,6 @@
            - Show in browser that all headers are still there (and maybe more!)
            - Point out how much simpler the code is
            - Show that you get compile-time checking and IntelliSense
-
            This is the "wow" moment of the talk. -->
 
       # [LIVE DEMO]
@@ -540,9 +494,7 @@
       .
         // Before: 20+ lines of manual headers
         // After:
-        app.UseSecureHeadersMiddleware(
-          SecureHeadersMiddlewareConfiguration.BuildDefaultConfiguration()
-        );
+        app.UseSecureHeadersMiddleware();
 
       # [LIVE DEMO]
       Inspect headers in browser DevTools
@@ -577,29 +529,14 @@
       *Package provides helpers, not magic*
       <!-- Important to set expectations here: OwaspHeaders.Core can't magically
            know what your CSP should be. Every application is different.
-
            The default CSP (default-src 'self') is VERY restrictive:
            - No inline scripts (<script>alert('hi')</script> won't work)
            - No inline styles
            - No external resources (CDNs, Google Fonts, etc.)
-
            This will likely break your app! That's intentional - it forces you to
            think about what scripts and resources you ACTUALLY need.
-
            The package provides a fluent API to customize CSP, but you need to
            understand your app's requirements first. -->
-
-      # [OPTIONAL DEMO]
-      CSP Builder Pattern
-      .
-        var cspConfig = new ContentSecurityPolicyConfiguration
-        {
-          DefaultSource = ContentSecurityPolicyElement.Self,
-          ScriptSource = new ContentSecurityPolicyElement
-          {
-            AllowSources = new List<string> { "'self'", "https://cdn.example.com" }
-          }
-        };
 
       # 💡 CSP Best Practice
       OwaspHeaders.Core provides:
@@ -624,18 +561,15 @@
       Claude, ChatGPT, GitHub Copilot, etc.
       <!-- This is a relatively new addition! I created a single TXT file containing
            the entire documentation in a format optimized for LLMs.
-
            Why? Because AI coding assistants work best when they can ingest complete
            documentation in one go. Traditional web docs spread across multiple pages
            require multiple fetches and context switching.
-
            The llms-full.txt file contains:
            - All API documentation
            - Configuration examples
            - Best practices
            - Common patterns
            - Troubleshooting tips
-
            You can give Claude/ChatGPT the URL and ask it to help you configure
            OwaspHeaders.Core for your specific use case. It's surprisingly effective! -->
 
@@ -643,7 +577,7 @@
         "Use the documentation at
         https://gaprogman.github.io/OwaspHeaders.Core/llms-full.txt
         to configure OwaspHeaders.Core with a strict CSP
-        that allows scripts only from my domain"
+        that allows scripts only from my domain and images from https://chester.dev"
       .
       *AI reads the doc, writes the code*
 
@@ -655,7 +589,6 @@
       .
       *Implement them today*
       <!-- This is the foundational message: HTTPS is necessary but not sufficient.
-
            Defence in depth means multiple layers of security. If one layer fails,
            others are still protecting you:
            - HTTPS protects data in transit
@@ -663,7 +596,6 @@
            - Input validation protects against injection
            - Authentication protects against unauthorized access
            - etc.
-
            Security headers are a low-effort, high-impact layer. No excuse not to use them. -->
 
       # 📝 Key Takeaway 2
@@ -677,7 +609,6 @@
            - No vendor bias or commercial agenda
            - Transparent, open-source approach
            - Regularly updated based on real-world threats
-
            When your boss asks "why should we implement this?", you can point to
            OWASP as the industry-standard authority on application security. -->
 
@@ -697,14 +628,12 @@
       *Two commands. Maximum security.*
       <!-- Call to action! Don't let people walk out thinking "that was interesting"
            without actually implementing it.
-
            Emphasize how EASY this is:
            - Takes literally 2 minutes to add
            - No configuration required to get started
            - Works with all ASP.NET Core apps (.NET 8+)
            - Can be added to existing apps without breaking changes
            - Free and open source
-
            If you're not using ASP.NET Core, the concepts still apply - look for
            similar packages/middleware in your framework, or implement manually
            using the OWASP guidance. -->
@@ -715,7 +644,8 @@
       .
       .
       https://gaprogman.github.io/OwaspHeaders.Core/
-      @GaProgMan
+      @GaProgMan (Bluesky)
+      https://rjj-software.co.uk/
       <!-- Common questions to be ready for:
            - Q: "Does this work with .NET Framework?" A: No, only ASP .NET Core on supported platforms (i.e. .NET 8 onwards)
            - Q: "Will this break my existing app?" A: Unlikely, but test CSP carefully
@@ -730,8 +660,9 @@
       -->
 
       # Jamie Taylor
-      - Senior Software Engineer
+      - Microsoft MVP (four years running) for Developer Technologies
       - Creator of OwaspHeaders.Core
+      - Host of The Modern .NET Show
       - Advocate for secure-by-default practices
       <!-- Presentation tips:
            - Total time: 45 minutes (leave 10 min for Q&A)
